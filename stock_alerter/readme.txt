@@ -10,8 +10,8 @@ are going to be processed. A simple dictionary will do.
 >>> exchange = {"GOOG": Stock("GOOG"), "AAPL": Stock("AAPL")}
 >>> for key in sorted(exchange.keys()): #doctest: -NORMALIZE_WHITESPACE
 ...    print key, exchange[key]
-AAPL <stock_alerter.stock.Stock ... at 0x0...>
-GOOG <stock_alerter.stock.Stock ... at 0x0...>
+AAPL <stock_alerter.stock.Stock ... at 0x...>
+GOOG <stock_alerter.stock.Stock ... at 0x...>
 
 Next, we configure the reader. The reader is the source from where the
 stock updates are coming. The module provides two readers out of the
