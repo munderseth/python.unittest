@@ -1,0 +1,22 @@
+language: python
+
+python:
+  - "2.7.6"
+
+env:
+  global:
+    - secure: KfVSPZZZ1/i/DDf6g4OOfcB1SvxHIP/cy/SGhLWxf7L/sH5EBy4sAkdZnxjH3Ku37p46jbLfqPZoL4fCyVrGYoPBDCCE8qrJo6ftFAxQdAMYFFV/fLaClH+euYCt2aOhR0c5v83M4r5GuUD338dRsGcowHmmRVRrckchIC3w7k1ih9OtLD6YLuQ+P8SvYUy1TWobvWzWT+3whB2uvU3o+2QLJrI+chpwbH+nf1RkvtYhNwVf8TwH8g+vDLVtsBjokUwDkc1zPo8GPylL2XQlQZ2t5Zbs8wJz0JQJvQGkbDBkS0QjRTTu2AL5vu6UwdRWNnB8jt8i7AChBc4ZPh8BZg==
+
+before_script:
+  - ./testspace_install.sh
+  - export PATH="${HOME}/testspace:${PATH}"
+  - mkdir -p shippable/codecoverage
+  - mkdir -p shippable/testresults
+script:
+  - testspace config url $TESTSPACE_TOKEN
+  - testspace import .testspace.xml
+  - testspace run
+
+after_script:
+  - cp nose2.xml shippable/testresults
+  - cp coverage.xml shippable/codecoverage
