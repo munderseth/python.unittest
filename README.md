@@ -29,7 +29,7 @@ testspace config url "token:@my-org-name.testspace.com/my-project"
 Publishing results example: 
 
 <pre>
-testspace publish [Tests]nose2.xml{test} coverage.xml "my-reports-only-space"
+testspace publish [Tests]nose2.xml coverage.xml "my-reports-only-space"
 </pre> 
 
 Checkout the [Space](https://samples.testspace.com/projects/python/spaces/unittest). 

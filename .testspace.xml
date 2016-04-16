@@ -9,7 +9,7 @@
     <suite name="Tests" state="1" id=".sh" description="run **all** of the unit tests">
       <attributes>
         <![CDATA[nose2 -X -C --coverage-report xml
-echo "$PWD/nose2.xml{test}" > ${self.result}]]>
+echo "$PWD/nose2.xml" > ${self.result}]]>
       </attributes>
     </suite>
     <suite name="Coverage" state="1" id=".sh" description="Code coverage based on latest run. Review the ==Reports== tab for historical tracking">
