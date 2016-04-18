@@ -1,2 +1,6 @@
 [run]
-omit = stock_alerter/tests/*
+omit = 
+	   stock_alerter/tests/*
+	   stock_alerter/__init__.py
+	   stock_alerter/__main__.py
+	   run_test.py
