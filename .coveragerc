@@ -1,0 +1,2 @@
+[run]
+omit = stock_alerter/tests/*
