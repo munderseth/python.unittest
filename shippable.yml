@@ -5,17 +5,17 @@ python:
 
 env:
   global:
-    - secure: KfVSPZZZ1/i/DDf6g4OOfcB1SvxHIP/cy/SGhLWxf7L/sH5EBy4sAkdZnxjH3Ku37p46jbLfqPZoL4fCyVrGYoPBDCCE8qrJo6ftFAxQdAMYFFV/fLaClH+euYCt2aOhR0c5v83M4r5GuUD338dRsGcowHmmRVRrckchIC3w7k1ih9OtLD6YLuQ+P8SvYUy1TWobvWzWT+3whB2uvU3o+2QLJrI+chpwbH+nf1RkvtYhNwVf8TwH8g+vDLVtsBjokUwDkc1zPo8GPylL2XQlQZ2t5Zbs8wJz0JQJvQGkbDBkS0QjRTTu2AL5vu6UwdRWNnB8jt8i7AChBc4ZPh8BZg==
-
+    - secure: FoXq63ka7EuWlqxNTG1RJqTCCzng5/FQXJkjjXarT5Rc4vxZv/1S6f+aRrYUz4Vz/i6H23/7iPDjE8qxN0sQdtfw6r5kvj5vc5LRdv3cB+h1DzVclqHcukXiuHnDJgmSnfY/KLRROPOTGFnSPPJmxE4L3CIZCJsMZOykOqikqD/ts8X2qpzNQluaL7N8Cmnks24dDSdqI7uad35bjwHY74u/TbWrjrSfQNZJYoGGg4TCHjb/m2b41op0apOa0pG3SO4HgodBeo1OsndWg9fDwlyIVhh+otDkuCcI1m7RvNATY9I17sN5a6iUN6UMgBHEEq2GS7aRcDZ0mTBsNzKaoQ==
+  
 before_script:
   - ./testspace_install.sh
   - export PATH="${HOME}/testspace:${PATH}"
   - mkdir -p shippable/codecoverage
   - mkdir -p shippable/testresults
+  
 script:
-  - testspace config url $TESTSPACE_TOKEN
-  - testspace import .testspace.xml
-  - testspace run
+  - testspace import .testspace.xml ${TESTSPACE_URL}
+  - testspace run ${TESTSPACE_URL}
 
 after_script:
   - cp nose2.xml shippable/testresults
