@@ -8,3 +8,4 @@ StockAlerter.egg-info
 .coverage
 coverage.xml
 nose2.xml
+analysis.txt
