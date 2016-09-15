@@ -35,7 +35,7 @@ sudo apt-get install pylint
 
 Running Static Analysis: 
 <pre>
-nose2 --junit-xml --with-coverage --coverage-report xml
+pylint stock_alerter/ -f parseable > analysis.txt
 </pre> 
 
 Running Tests with Code Coverage: 
