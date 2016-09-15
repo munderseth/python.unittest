@@ -9,7 +9,7 @@ before_script:
   - sudo apt-get install pylint
 
 script: 
-  - pylint stock_alerter/ -f parseable > analysis.txt
+  - pylint stock_alerter/ -f parseable > analysis.txt || true
   - nose2 -X -C --coverage-report xml
 
 after_script:
