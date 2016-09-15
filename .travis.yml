@@ -1,13 +1,15 @@
-language: python
+language: 
+  - python
+
 python:
   - "2.7.6"
+
 before_script:
-  # Install Testspace Runner
-  - ./testspace_install.sh
-  - export PATH="${HOME}/testspace:${PATH}"
   - sudo pip install -r requirements.txt
+
 script: 
   - nose2 -X -C --coverage-report xml
-  
-  # Publish Test Results along with Coverage
-  - testspace publish [Tests]nose2.xml coverage.xml ${TESTSPACE_URL}
+
+after_script:
+  - curl -s https://testspace-client.s3.amazonaws.com/testspace-linux.tgz | sudo tar -zxvf- -C /usr/local/bin
+  - testspace publish [Tests]nose2.xml coverage.xml $TESTSPACE_TOKEN/${TRAVIS_BRANCH}#travis.Build.${TRAVIS_BUILD_NUMBER}
