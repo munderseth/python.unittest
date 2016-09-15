@@ -18,21 +18,37 @@ Publishing **Test Content** using www.testspace.com.
 
 [![Space Health](https://samples.testspace.com/projects/120/spaces/444/badge)](https://samples.testspace.com/projects/120/spaces/444 "Test Cases")
 [![Space Metric](https://samples.testspace.com/projects/120/spaces/444/metrics/272/badge)](https://samples.testspace.com/spaces/444/schema/Code%20Coverage "Code Coverage (lines)")
+[![Space Metric](https://samples.testspace.com/projects/120/spaces/444/metrics/274/badge)](https://samples.testspace.com/spaces/444/schema/Static%20Analysis "Static Analysis (issues)")
 
 
 *** 
 
 In order to run this sample you will need a host workstation with installed python 2.6+.
 
+Buiding:
+
 <pre>
 sudo pip install -r requirements.txt
-nose2 --junit-xml --with-coverage --coverage-report xml
+sudo apt-get install pylint
 </pre>
+
+
+Running Static Analysis: 
+<pre>
+nose2 --junit-xml --with-coverage --coverage-report xml
+</pre> 
+
+Running Tests with Code Coverage: 
+
+<pre>
+nose2 --junit-xml --with-coverage --coverage-report xml
+</pre> 
+
 
 Publishing Results using **Testspace**: 
 
 <pre>
-testspace [Tests]nose2.xml coverage.xml $TESTSPACE_TOKEN/$BRANCH_NAME
+testspace analysis.txt{issues} [Tests]nose2.xml{stock_alerter} coverage.xml $TESTSPACE_TOKEN/$BRANCH_NAME
 </pre> 
 
 Checkout the [Space](https://samples.testspace.com/projects/python.unittest). 

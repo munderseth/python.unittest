@@ -2,13 +2,14 @@
 
 # Build
 sudo pip install -r requirements.txt
+sudo apt-get install pylint
 
 # Code Analysis
-
+pylint stock_alerter/ -f parseable > analysis.txt
 
 # Test with Code Coverage
 nose2 --junit-xml --with-coverage --coverage-report xml
 
 # Publish
 curl -s https://testspace-client.s3.amazonaws.com/testspace-linux.tgz | sudo tar -zxvf- -C /usr/local/bin
-testspace publish [Tests]nose2.xml coverage.xml  master.c9
+testspace analysis.txt{issues} [Tests]nose2.xml{stock_alerter} coverage.xml  master.c9
