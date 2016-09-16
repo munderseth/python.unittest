@@ -5,6 +5,7 @@ __pycache__
 dist
 StockAlerter.egg-info
 
+htmlcov/
 .coverage
 coverage.xml
 nose2.xml
