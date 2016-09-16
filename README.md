@@ -41,14 +41,14 @@ pylint stock_alerter/ -f parseable > analysis.txt
 Running Tests with Code Coverage: 
 
 <pre>
-nose2 --junit-xml --with-coverage --coverage-report xml
+nose2 --junit-xml --with-coverage
 </pre> 
 
 
 Publishing Results using **Testspace**: 
 
 <pre>
-testspace analysis.txt{issues} [Tests]nose2.xml{stock_alerter} coverage.xml $TESTSPACE_TOKEN/$BRANCH_NAME
+testspace analysis.txt{issues} nose2.xml{stock_alerter} coverage.xml $TESTSPACE_TOKEN/$BRANCH_NAME
 </pre> 
 
 Checkout the [Space](https://samples.testspace.com/projects/python.unittest). 
