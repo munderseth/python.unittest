@@ -48,6 +48,7 @@ nose2 --junit-xml --with-coverage
 Publishing Results using **Testspace**: 
 
 <pre>
+curl -s https://testspace-client.s3.amazonaws.com/testspace-linux.tgz | sudo tar -zxvf- -C /usr/local/bin
 testspace analysis.txt{issues} nose2.xml{stock_alerter} coverage.xml $TESTSPACE_TOKEN/$BRANCH_NAME
 </pre> 
 
@@ -58,5 +59,5 @@ To replicate this sample:
   - Account at www.testspace.com.
   - CI Environment Variable called **TESTSPACE_TOKEN** required:
     -  `TESTSPACE_TOKEN` = `credentials@my-org-name.testspace.com/my-project`
-    - `credentials` set to `username:password` or your [access token](http://help.testspace.com/using-your-organization:user-settings).
-    - `my-org-name.testspace.com/my-project` based on your *subdomain* and *project* names. Refer [here](http://help.testspace.com/reference:runner-reference#login-credentials) for more details. 
+    - `credentials` set to `username:password` or your [access token](http://help.testspace.com/reference:client-reference#login-credentials).
+    - `my-org-name.testspace.com/my-project` based on your *organization* (subdomain) and *project* names. 
