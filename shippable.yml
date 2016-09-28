@@ -7,14 +7,13 @@ env:
   global:
    - secure: RGODsZdmwQ3s4UWceX5G38WaPZSMwqVYpfhIzni6QqhK+/oaB01qfkcoe79MwI2z2FVo68+mH+oYhcwhc9KSWal7O7FQshZPS8m0e5TIX3FzaD+KYzON/YYWRXdye9F/4DgtCSKrObkCIl0jJkAHkjITq4kU/FSWMGsUeqyjSPjNLPqOlp5KgNe+CKKGhKddCGH/KSLKfc0zMEgMLKHRmSLh5narSX0raNkxierBY3IV/l8X0QWaSo+eunztKU6yCvQLXOKoJ3Ej+yzNvjWdUtIEndUqwKdytxF0pb0eY9IoYOicfn9uDn4T9oymQMqjkoPpGf30AyBaW/XfCyOFFQ==
 
-before_script:
+build:
+ ci:
   - sudo pip install -r requirements.txt
   - sudo apt-get install pylint
-
-script:
   - pylint stock_alerter/ -f parseable > analysis.txt || true
   - nose2 --junit-xml --with-coverage 
 
-after_script:
+ post_ci:
   - curl -s https://testspace-client.s3.amazonaws.com/testspace-linux.tgz | sudo tar -zxvf- -C /usr/local/bin
   - testspace analysis.txt{issues} nose2.xml{stock_alerter} coverage.xml $TESTSPACE_TOKEN/${BRANCH}#ship.Build.${BUILD_NUMBER}
