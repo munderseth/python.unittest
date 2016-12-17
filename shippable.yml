@@ -5,7 +5,7 @@ python:
 
 env:
   global:
-   - secure: RGODsZdmwQ3s4UWceX5G38WaPZSMwqVYpfhIzni6QqhK+/oaB01qfkcoe79MwI2z2FVo68+mH+oYhcwhc9KSWal7O7FQshZPS8m0e5TIX3FzaD+KYzON/YYWRXdye9F/4DgtCSKrObkCIl0jJkAHkjITq4kU/FSWMGsUeqyjSPjNLPqOlp5KgNe+CKKGhKddCGH/KSLKfc0zMEgMLKHRmSLh5narSX0raNkxierBY3IV/l8X0QWaSo+eunztKU6yCvQLXOKoJ3Ej+yzNvjWdUtIEndUqwKdytxF0pb0eY9IoYOicfn9uDn4T9oymQMqjkoPpGf30AyBaW/XfCyOFFQ==
+   - secure: fmnjo4w31dWiBiCE52YfvBN+OGcIopLy1QeCF9swK/ZoIVNE8VmSV6q2Od7xSBwjXFHdTp5CII5uwjkRUey/Sq4CoCIGmpxOUkopfWdi+U/x84uAt53bgpx8dTIwe/5P+B28XOHSClUv1ZD5QaU8hw/daAZZ8RhsqXdH4orSm5fjL69apFfBdVVY4h7UHTczKIe+gxJGV8hom7XArUUmpNxsoztdDZlgAtYFv1D2QJu5OiNt0QB6fqvBdjzr2Bziqbzn//ldf6KCapEBgfmdFyqfNy0iHr7nBcQDjr/SgsxJYaLgbwWAFB7ANfsgSzNt0qha59VqD9MJ4iIjciNF2A==
 
 build:
  ci:
