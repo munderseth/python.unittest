@@ -7,19 +7,10 @@
 Sample demonstrates techniques for using Testspace with Python code and the [`unittest` test framework](https://docs.python.org/2/library/unittest.html) together with [`cov-core` code coverage tool](https://pypi.python.org/pypi/cov-core) and [`nose2` runner](https://github.com/nose-devs/nose2).
 
 ***
-Using Multiple Online CI Services:
 
-[![Build Status](https://travis-ci.org/testspace-samples/php.phpunit.svg?branch=master)](https://travis-ci.org/testspace-samples/php.phpunit)
-[![CircleCI](https://circleci.com/gh/testspace-samples/python.unittest.svg?style=svg)](https://circleci.com/gh/testspace-samples/python.unittest)
-[![Run Status](https://api.shippable.com/projects/5710a3e02a8192902e1c1f8d/badge?branch=master)](https://app.shippable.com/projects/5710a3e02a8192902e1c1f8d)
+Example branching only: **development**
 
-
-***
-Publishing **Test Content** using www.testspace.com.
-
-[![Space Health](https://samples.testspace.com/projects/161/spaces/757/badge)](https://samples.testspace.com/projects/161/spaces/757 "Test Cases")
-[![Space Metric](https://samples.testspace.com/projects/161/spaces/757/metrics/683/badge)](https://samples.testspace.com/spaces/757/schema/Code%20Coverage "Code Coverage (lines)")
-[![Space Metric](https://samples.testspace.com/projects/161/spaces/757/metrics/684/badge)](https://samples.testspace.com/spaces/757/schema/Static%20Analysis "Static Analysis (issues)")
+* Reference article: [git branching workflow](https://git-scm.com/book/en/v1/Git-Branching-Branching-Workflows)
 
 *** 
 
