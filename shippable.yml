@@ -12,7 +12,7 @@ build:
   - sudo pip install -r requirements.txt
   - sudo apt-get install pylint
   - pylint stock_alerter/ -f parseable > analysis.txt || true
-  - nose2 --junit-xml --with-coverage 
+  - nose2 --junit-xml --with-coverage || true
 
 # Requires TESTSPACE_TOKEN environment variable. 
  post_ci:

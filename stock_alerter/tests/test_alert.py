@@ -50,3 +50,6 @@ class AlertTest(unittest.TestCase):
                           mock.call.rule.matches(exchange),
                           mock.call.action.execute("sample alert")],
                          main_mock.mock_calls)
+                         
+    def test_failure_example_only(self):
+        self.assertEqual(1,2)
