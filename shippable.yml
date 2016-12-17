@@ -14,6 +14,7 @@ build:
   - pylint stock_alerter/ -f parseable > analysis.txt || true
   - nose2 --junit-xml --with-coverage 
 
+# Requires TESTSPACE_TOKEN environment variable. 
  post_ci:
   - curl -s https://testspace-client.s3.amazonaws.com/testspace-linux.tgz | sudo tar -zxvf- -C /usr/local/bin
-  - testspace analysis.txt{issues} nose2.xml{stock_alerter} coverage.xml $TESTSPACE_TOKEN/${BRANCH}#ship.Build.${BUILD_NUMBER}
+  - testspace @.testspace.txt $TESTSPACE_TOKEN/${SHIPPABLE_REPO_SLUG/\//:}/${BRANCH}#ship.Build.${BUILD_NUMBER}

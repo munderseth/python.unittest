@@ -1,4 +1,5 @@
-[![Testspace](http://www.testspace.com/public/img/testspace_logo.png)](http://www.testspace.com)
+[![Testspace](http://www.testspace.com/img/Testspace.png)](http://www.testspace.com)
+
 ***
 
 ## Python/Unittest sample for demonstrating Testspace based on the [test_driven_python repo](https://github.com/siddhi/test_driven_python)
@@ -16,10 +17,9 @@ Using Multiple Online CI Services:
 ***
 Publishing **Test Content** using www.testspace.com.
 
-[![Space Health](https://samples.testspace.com/projects/120/spaces/444/badge)](https://samples.testspace.com/projects/120/spaces/444 "Test Cases")
-[![Space Metric](https://samples.testspace.com/projects/120/spaces/444/metrics/272/badge)](https://samples.testspace.com/spaces/444/schema/Code%20Coverage "Code Coverage (lines)")
-[![Space Metric](https://samples.testspace.com/projects/120/spaces/444/metrics/274/badge)](https://samples.testspace.com/spaces/444/schema/Static%20Analysis "Static Analysis (issues)")
-
+[![Space Health](https://samples.testspace.com/projects/161/spaces/757/badge)](https://samples.testspace.com/projects/161/spaces/757 "Test Cases")
+[![Space Metric](https://samples.testspace.com/projects/161/spaces/757/metrics/683/badge)](https://samples.testspace.com/spaces/757/schema/Code%20Coverage "Code Coverage (lines)")
+[![Space Metric](https://samples.testspace.com/projects/161/spaces/757/metrics/684/badge)](https://samples.testspace.com/spaces/757/schema/Static%20Analysis "Static Analysis (issues)")
 
 *** 
 
@@ -49,15 +49,16 @@ Publishing Results using **Testspace**:
 
 <pre>
 curl -s https://testspace-client.s3.amazonaws.com/testspace-linux.tgz | sudo tar -zxvf- -C /usr/local/bin
-testspace analysis.txt{issues} nose2.xml{stock_alerter} coverage.xml $TESTSPACE_TOKEN/$BRANCH_NAME
+testspace @.testspace.txt $TESTSPACE_TOKEN/$GITHUB_ORG:$REPO_NAME/$BRANCH_NAME#$BUILD_NUMBER
 </pre> 
 
-Checkout the [Space](https://samples.testspace.com/projects/python.unittest). 
+Checkout the published [Test Content](https://samples.testspace.com/projects/testspace-samples:python.unittest). Note that the `.testspace.txt` file contains the [set of files](http://help.testspace.com/how-to:publish-content#publishing-via-content-list-file) to publish. 
 
 ***
+
 To replicate this sample: 
-  - Account at www.testspace.com.
-  - CI Environment Variable called **TESTSPACE_TOKEN** required:
-    -  `TESTSPACE_TOKEN` = `credentials@my-org-name.testspace.com/my-project`
-    - `credentials` set to `username:password` or your [access token](http://help.testspace.com/reference:client-reference#login-credentials).
-    - `my-org-name.testspace.com/my-project` based on your *organization* (subdomain) and *project* names. 
+  - Setup account at www.testspace.com.
+  - Create a Environment variable called `TESTSPACE_TOKEN`
+     - `TESTSPACE_TOKEN` = `credentials@Your-Org-Name.testspace.com`
+     - `credentials` set to `username:password` or your [access token](http://help.testspace.com/reference:client-reference#login-credentials)
+     - To [use](http://help.testspace.com/how-to:add-to-ci) Testspace in a CI system, store `TESTSPACE_TOKEN` as a secure environment variable
