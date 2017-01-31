@@ -1,3 +1,3 @@
-analysis.txt{issues}
+analysis.txt{lint}
 nose2.xml{stock_alerter}
 coverage.xml
