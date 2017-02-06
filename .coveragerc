@@ -1,4 +1,5 @@
 [run]
+branch = True
 omit = 
 	   stock_alerter/tests/*
 	   stock_alerter/__init__.py
